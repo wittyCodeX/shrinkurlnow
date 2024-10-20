@@ -6,10 +6,21 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    darkMode: "class",
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        light: {
+          primary: "#B17457",
+          secondary: "#D8D2C2",
+          accent: "#4A4947",
+          neutral: "#FAF7F0",
+        },
+        dark: {
+          primary: "#6A9AB0",
+          secondary: "#3A6D8C",
+          accent: "#EAD8B1",
+          neutral: "#001F3F",
+        },
       },
     },
   },
