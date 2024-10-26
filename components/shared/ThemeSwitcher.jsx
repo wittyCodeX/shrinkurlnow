@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
-import { GoSun, GoMoon } from "react-icons/go";
+"use client";
+
+import { useEffect, useState } from "react";
+import { GoMoon, GoSun } from "react-icons/go";
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -42,12 +44,12 @@ export default function ThemeSwitcher() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 mt-4 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-secondary dark:focus:ring-light-secondary"
+      className="transition-all md:hover:bg-light-secondary  md:dark:hover:bg-white p-[0.6rem] rounded-full "
     >
       {theme === "dark" ? (
-        <GoSun className="w-6 h-6 text-light-secondary dark:text-dark-secondary" />
+        <GoSun className=" text-light-secondary text-xl dark:text-dark-secondary" />
       ) : (
-        <GoMoon className="w-6 h-6 text-dark-accent dark:text-dark-accent" />
+        <GoMoon className=" text-light-primary  text-xl  dark:text-dark-accent" />
       )}
     </button>
   );
