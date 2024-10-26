@@ -1,45 +1,29 @@
 "use client";
 
+import { useTheme } from 'next-themes';
 import { useEffect, useState } from "react";
 import { GoMoon, GoSun } from "react-icons/go";
 
 export default function ThemeSwitcher() {
+  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     setMounted(true);
+    const storedTheme = localStorage.getItem('theme');
 
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.add(savedTheme);
-    } else {
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      setTheme(prefersDark ? "dark" : "light");
-      document.documentElement.classList.add(prefersDark ? "dark" : "light");
+    if (storedTheme) {
+      setTheme(storedTheme);
     }
-  }, []);
+  }, [setTheme]);
 
   const toggleTheme = () => {
-    if (theme === "dark") {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-      localStorage.setItem("theme", "light");
-      setTheme("light");
-    } else {
-      document.documentElement.classList.remove("light");
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setTheme("dark");
-    }
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
   };
 
-  if (!mounted) {
-    return null;
-  }
+  if (!mounted) return null;
 
   return (
     <button
