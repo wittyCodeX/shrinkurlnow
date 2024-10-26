@@ -2,7 +2,6 @@
 
 import Form from "@/components/Form"
 import ThemeSwitcher from "../components/ThemeSwitcher"
-import Signup from "./components/Signup"
 
 export default function Home() {
   return (
@@ -14,7 +13,6 @@ export default function Home() {
         <h1 className="text-3xl font-bold mb-4">Welcome to ShrinkUrlNow</h1>
         <p className="text-lg mb-6">A simple tool to shorten your URLs</p>
         <Form />
-        <Signup />
       </div>
     </section>
   )
