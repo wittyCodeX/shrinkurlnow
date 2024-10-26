@@ -1,17 +1,19 @@
-import React from "react"
-import { useForm } from "react-hook-form"
+'use client';
 
-function Signup() {
+import React from "react";
+import { useForm } from "react-hook-form";
+
+export default function Signup() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
+    console.log(data);
     // Handle signup logic here
-  }
+  };
 
   return (
     <form
@@ -19,10 +21,7 @@ function Signup() {
       className="space-y-4 w-full max-w-md mx-auto"
     >
       <div className="flex flex-col">
-        <label
-          htmlFor="username"
-          className="mb-1"
-        >
+        <label htmlFor="username" className="mb-1">
           Username
         </label>
         <input
@@ -37,10 +36,7 @@ function Signup() {
         )}
       </div>
       <div className="flex flex-col">
-        <label
-          htmlFor="email"
-          className="mb-1"
-        >
+        <label htmlFor="email" className="mb-1">
           Email
         </label>
         <input
@@ -60,10 +56,7 @@ function Signup() {
         )}
       </div>
       <div className="flex flex-col">
-        <label
-          htmlFor="password"
-          className="mb-1"
-        >
+        <label htmlFor="password" className="mb-1">
           Password
         </label>
         <input
@@ -91,7 +84,5 @@ function Signup() {
         Sign Up
       </button>
     </form>
-  )
+  );
 }
-
-export default Signup
