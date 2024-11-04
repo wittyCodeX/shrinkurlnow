@@ -19,7 +19,7 @@ const Signup = () => {
 
   return (
     <section className="flex flex-col max-w-md w-full space-y-4 section">
-      <h1 className="text-2xl font-bold text-center">Sign Up</h1>
+      <h1 className="text-2xl font-bold text-center">Sign In</h1>
       <FormProvider {...methods}>
         <form
           onSubmit={handleSubmit(onSubmit)}
