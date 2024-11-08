@@ -4,9 +4,8 @@ import React from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
-const Signin = () => {
+const Signup = () => {
   const methods = useForm();
   const {
     handleSubmit,
@@ -53,18 +52,12 @@ const Signin = () => {
             error={errors.password}
           />
           <Button type="submit" className="w-full">
-            Sign In
+            Sign Up
           </Button>
         </form>
-        <small className="text-center">
-          Don&apos;t have an account?{" "}
-          <Link href="/signup" className="font-semibold hover:font-bold">
-            Sign Up
-          </Link>
-        </small>
       </FormProvider>
     </section>
   );
 };
 
-export default Signin;
+export default Signup;
